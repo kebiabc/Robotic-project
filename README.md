@@ -20,7 +20,7 @@ Main Project Divided in Two Parts:
 • Part I: Autonomous Driving
 
 • Part II: Robots collaboration task
-## Project Workflow 
+## Flow-chart of Project 
 
 ## Requirements
 - ros-noetic-image-transport 
@@ -90,6 +90,9 @@ The object is to go from start point to delivering point to pick a piece, and th
 ### Aruco tag detection
 
 Using the camera on the TB3 we created an aruco tag detector which will detect the tag and publish on `/aruco_distance` topic the distance between the robot and the aruco tag.
+
+![image](https://github.com/kebiabc/Robotic-project/assets/33951067/f8ac90d7-81a7-494e-a1ab-2b0acba10d8f)
+
 
 ```bash
 rosrun turtlebot3_autorace_driving stoparuco.py
