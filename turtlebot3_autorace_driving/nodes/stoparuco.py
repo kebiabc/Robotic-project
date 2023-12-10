@@ -39,7 +39,7 @@ class Stoparuco:
                 for i in range(len(ids)):
                     # print(f"Detected ArUco marker {ids[i]}")
                     # Estimate the pose of the marker
-                    rvecs, tvecs, _ = cv2.aruco.estimatePoseSingleMarkers(corners[i], 0.1, self.camera_matrix, self.dist_coeffs)
+                    rvecs, tvecs, _ = aruco.estimatePoseSingleMarkers(corners[i], 0.1, self.camera_matrix, self.dist_coeffs)
 
                     aruco.drawDetectedMarkers(cv_image, corners, ids)
                     # Calculate the distance from the camera to the marker
