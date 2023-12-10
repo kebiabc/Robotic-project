@@ -85,6 +85,10 @@ The object is to go from start point to delivering point to pick a piece, and th
 
 Using the camera on the TB3 we created an aruco tag detector which will detect the tag and publish on `/aruco_distance` topic the distance between the robot and the aruco tag.
 
+```bash
+rosrun turtlebot3_autorace_driving stoparuco.py
+```
+
 ### Connect to Niryo Ned 2 
 We connect to Niryo Ned 2 through SSH on the specific IP. By reading the documentation, there are many ways to establish a connection, because we also need to connect turtlebot, so in this case, we choose ethernet to connect.
 Open a new terminal 
@@ -103,10 +107,8 @@ Before
 ```bash
 roslaunch turtlebot3_autorace_driving turtlebot3_autorace_control_lane.launch
 ```
-Launch the added code
+Launch the code for Niryo Ned 2
 ```bash
-
-rosrun turtlebot3_autorace_driving stoparuco.py
 
 rosrun turtlebot3_autorace_driving connectned2.py
 
