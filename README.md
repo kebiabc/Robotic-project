@@ -17,3 +17,14 @@ Main Project Divided in Two Parts:
 • Part I: Autonomous Driving
 
 • Part II: Robots collaboration task
+## Project Workflow 
+
+## Requirements
+- ros-noetic-image-transport 
+- ros-noetic-cv-bridge 
+- ros-noetic-vision-opencv 
+- python3-opencv 
+- libopencv-dev 
+- ros-noetic-image-proc
+- pyniryo
+- pyniryo2
