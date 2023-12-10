@@ -13,5 +13,7 @@ Supervisors:
 Create the coordination with TurtleBot3 and Niryo Ned2
 
 Main Project Divided in Two Parts:
+
 • Part I: Autonomous Driving
+
 • Part II: Robots collaboration task
