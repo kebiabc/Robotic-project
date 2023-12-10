@@ -15,28 +15,25 @@ class Connectned2:
 
    def niryoCallBack(self, msg):
       self.counter += 1
-      if self.counter<=1:
-         print(msg.data)
-         if msg.data == 1:
-
-
-            robot = NiryoRobot("192.168.0.150")
-            try:
-               # Move to an observation position then
-               robot.move_pose(*[-0.018, -0.211, 0.343, -0.436, 1.449, -2.077])
-               # Try to do a vision pick:
-               if robot.vision_pick('Liang_Yao', 0/1000.0, ObjectShape.SQUARE, ObjectColor.RED)[0]:
-                  # If an object has been taken, do:
-                  robot.place_from_pose(*[0.283, 0.014, 0.461, 0.005, 1.191, -0.078])
-                  robot.move_pose(*[0.386, -0.012, 0.328, -1.27, 1.526, -1.432])
+      if self.counter<=1 && msg.data == 1:
+         robot = NiryoRobot("192.168.0.150")
+         try:
+            # Move to an observation position then
+            robot.move_pose(*[-0.018, -0.211, 0.343, -0.436, 1.449, -2.077])
+            # Try to do a vision pick:
+            if robot.vision_pick('Liang_Yao', 0/1000.0, ObjectShape.SQUARE, ObjectColor.RED)[0]:
+               # If an object has been taken, do:
+               robot.place_from_pose(*[0.283, 0.014, 0.461, 0.005, 1.191, -0.078])
+               robot.move_pose(*[0.386, -0.012, 0.328, -1.27, 1.526, -1.432])
                  
 
-            except NiryoRosWrapperException as e:
-               sys.stderr.write(str(e))
+         except NiryoRosWrapperException as e:
+            sys.stderr.write(str(e))
 
-            robot.close_connection()
-            self.pub_niryo.publish(2)
-            # rospy.signal_shutdown("Task completed")  # Shutdown the ROS node after completing the task
+         robot.close_connection()
+         self.pub_niryo.publish(2)
+
+         # rospy.signal_shutdown("Task completed")  # Shutdown the ROS node after completing the task
 
 
 if __name__ == '__main__':
