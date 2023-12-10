@@ -122,7 +122,7 @@ rosrun turtlebot3_autorace_driving connectned2.py
 
 ```
 ### Connections:
-
+```bash
         +------------------+               +------------------+
         |   ControlLane    |               |   Connectned2    |
         |                  |               |                  |
@@ -143,7 +143,7 @@ rosrun turtlebot3_autorace_driving connectned2.py
                                       | /aruco_distance  |
                                       | /aruco_markers   |
                                       +------------------+
-
+```
 
 The ControlLane class subscribes to /aruco_distance topic, which is  published by the Stoparuco class.
 
