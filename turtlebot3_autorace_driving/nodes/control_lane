@@ -18,20 +18,20 @@ class ControlLane():
         self.lastError = 0
         self.MAX_VEL = 0.1
 
-        self.stopped = False
-        self.niryoJobWanted = True
+        self.arucoflag = False
+        self.niryoflag = True
 
         rospy.on_shutdown(self.fnShutDown)
 
     def arucoCallBack(self, msg):
-        distance_to_tag = msg.data
-        if 0.4 < distance_to_tag < 0.5:
-            self.stopped = True
+        distance = msg.data
+        if 0.4 < distance < 0.5:
+            self.arucoflag = True
     
     def niryoCallBack(self, msg):
         if msg.data == 2:
-            self.stopped = False
-            self.niryoJobWanted = False
+            self.arucoflag = False
+            self.niryoflag = False
 
 
 
@@ -61,13 +61,13 @@ class ControlLane():
             twist.angular.z = -max(angular_z, -2.0) if angular_z < 0 else -min(angular_z, 2.0)
             self.pub_cmd_vel.publish(twist)
 
-        # elif self.niryoJobWanted:
-        #     print("stopped for niryo")
-        #     self.pub_niryo.publish(1)
+            elif self.niryoflag:
+                print("stopped for niryo")
+                self.pub_niryo.publish(1)
 
-        else:
-            print("finished job")
-            self.stopped = True    
+            else:
+                print("Niryo finished")
+                self.arucoflag = True    
 
     def fnShutDown(self):
         rospy.loginfo("Shutting down. cmd_vel will be 0")
