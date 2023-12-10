@@ -18,10 +18,9 @@ class Connectned2:
       if self.counter<=1:
          print(msg.data)
          if msg.data == 1:
-            robot = NiryoRobot("192.168.0.172")
 
-            # robot.calibrate_auto()
 
+            robot = NiryoRobot("192.168.0.150")
             try:
                # Move to an observation position then
                robot.move_pose(*[-0.018, -0.211, 0.343, -0.436, 1.449, -2.077])
