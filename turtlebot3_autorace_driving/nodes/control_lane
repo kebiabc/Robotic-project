@@ -62,7 +62,7 @@ class ControlLane():
             self.pub_cmd_vel.publish(twist)
 
         elif self.niryoflag == True:
-            print("stopped for niryo")
+            print("Waiting niryo.....")
             self.pub_niryo.publish(1)
 
         else:
