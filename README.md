@@ -121,3 +121,8 @@ Launch the code for Niryo Ned 2
 rosrun turtlebot3_autorace_driving connectned2.py
 
 ```
+### Connections:
+
+The ControlLane class subscribes to /aruco_distance topic, which is likely published by the Stoparuco class.
+The Connectned2 class subscribes to and publishes messages on the /niryo_con topic, which might be used by the ControlLane class to coordinate the robot's behavior based on the Niryo controller status.
+The Stoparuco class is responsible for processing camera images and detecting Aruco markers, providing distance information. This information might be used by the ControlLane class to make decisions based on the detected Aruco markers.
