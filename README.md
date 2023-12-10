@@ -27,4 +27,13 @@ Main Project Divided in Two Parts:
 - libopencv-dev 
 - ros-noetic-image-proc
 - pyniryo
-- pyniryo2
+
+## Part I: Autonomous Driving
+### Connection
+```bash
+ssh ubuntu@192.168.0.200
+```
+### Intrinsic Camera Calibration
+```bash
+roslaunch turtlebot3_autorace_camera intrinsic_camera_calibration.launch mode:=calibration
+```
