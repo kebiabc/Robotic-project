@@ -108,7 +108,13 @@ Using the camera on the TB3 we created an aruco tag detector which will detect t
 ```bash
 rosrun turtlebot3_autorace_driving stoparuco.py
 ```
-
+```bash
+rvecs, tvecs, _ = cv2.aruco.estimatePoseSingleMarkers(corners[i], 0.1, self.camera_matrix, self.dist_coeffs)
+aruco.drawDetectedMarkers(cv_image, corners, ids)
+# Calculate the distance from the camera to the marker
+distance = np.linalg.norm(tvecs[0]) if tvecs is not None else None
+rospy.loginfo(f"Distance to marker: {distance} meters")
+```   
 ### Connect to Niryo Ned 2 
 We connect to Niryo Ned 2 through SSH on the specific IP. By reading the documentation, there are many ways to establish a connection, because we also need to connect turtlebot, so in this case, we choose ethernet to connect.
 Open a new terminal 
@@ -120,6 +126,7 @@ ssh niryo@192.168.0.150
 ### Operating interface
 Niryo Studio is a graphical HMI. It allows a fast and direct control of Ned with an external computer.
 Its purpose is to provide users with a complete and simple interface for Ned motion, programming environments and current status of Ned.
+
 We set tasks and parameters through the graphical interface, and finally export it to a python file
 ![image](https://github.com/kebiabc/Robotic-project/assets/33951067/8dea1538-c6e4-4c11-b7a0-437cc49d4192)
 
