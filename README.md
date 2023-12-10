@@ -153,3 +153,11 @@ The ControlLane class subscribes to /aruco_distance topic, which is  published b
 The Connectned2 class subscribes to and publishes messages on the /niryo_con topic, which used by the ControlLane class to coordinate the robot's behavior based on the Niryo controller status.
 
 The Stoparuco class is responsible for processing camera images and detecting Aruco markers, providing distance information. This information is used by the ControlLane class to make decisions based on the detected Aruco markers.
+
+## Demo
+![GIF 2023-12-10 17-27-12](https://github.com/kebiabc/Robotic-project/assets/33951067/839a0c90-f378-4dc9-86ec-ca72292314fe)
+
+
+![GIF 2023-12-10 17-19-55](https://github.com/kebiabc/Robotic-project/assets/33951067/e92541d5-2c1d-40b7-91ea-a095e2d93e6e)
+
+
