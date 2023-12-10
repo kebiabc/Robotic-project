@@ -24,13 +24,13 @@ class Connectned2:
 
             try:
                # Move to an observation position then
-               robot.move_pose(*[0.001, -0.213, 0.217, 3.1, 1.395, 1.559])
+               robot.move_pose(*[-0.018, -0.211, 0.343, -0.436, 1.449, -2.077])
                # Try to do a vision pick:
-               if robot.vision_pick('default_workspace_turltelbot', 0/1000.0, ObjectShape.CIRCLE, ObjectColor.RED)[0]:
+               if robot.vision_pick('Liang_Yao', 0/1000.0, ObjectShape.SQUARE, ObjectColor.RED)[0]:
                   # If an object has been taken, do:
-                  robot.place_from_pose(*[0.326, -0.015, 0.314, -2.232, 1.471, -2.234])
-                  robot.move_pose(*[0.326, -0.015, 0.364, -2.175, 1.476, -2.178])
-                  robot.move_pose(*[0, -0.284, 0.325, 2.928, 1.346, 1.383])
+                  robot.place_from_pose(*[0.283, 0.014, 0.461, 0.005, 1.191, -0.078])
+                  robot.move_pose(*[0.386, -0.012, 0.328, -1.27, 1.526, -1.432])
+                 
 
             except NiryoRosWrapperException as e:
                sys.stderr.write(str(e))
@@ -42,7 +42,7 @@ class Connectned2:
 
 if __name__ == '__main__':
    try:
-      niryo_connection'= Connectned2()
+      niryo_connection = Connectned2()
       rospy.spin()
 
    except rospy.ROSInterruptException:
