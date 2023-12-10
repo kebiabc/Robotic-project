@@ -75,6 +75,9 @@ roslaunch turtlebot3_autorace_detect detect_lane.launch mode:=calibration
 ```bash
 rosrun rqt_reconfigure rqt_reconfigure
 ```
+![image](https://github.com/kebiabc/Robotic-project/assets/33951067/724c13f7-1fc9-4613-9b66-312a38a4881c)
+
+### Filtered Image resulted from adjusting parameters at rqt_reconfigure
 ![image](https://github.com/kebiabc/Robotic-project/assets/33951067/dc08bc5b-656d-4604-8b7a-4e714fbc6dd8)
 
 
