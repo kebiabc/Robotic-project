@@ -41,7 +41,6 @@ class Stoparuco:
                     # Estimate the pose of the marker
                     rvecs, tvecs, _ = aruco.estimatePoseSingleMarkers(corners[i], 0.1, self.camera_matrix, self.dist_coeffs)
 
-                    aruco.drawDetectedMarkers(cv_image, corners, ids)
                     # Calculate the distance from the camera to the marker
                     distance = np.linalg.norm(tvecs[0]) if tvecs is not None else None
                     rospy.loginfo(f"Distance to marker: {distance} meters")        
