@@ -22,6 +22,8 @@ Main Project Divided in Two Parts:
 • Part II: Robots collaboration task
 ## Flow-chart of Project 
 
+![image](https://github.com/kebiabc/Robotic-project/assets/33951067/4c2c992b-5199-48aa-ae3a-857cf4e277ab)
+
 ## Requirements
 - ros-noetic-image-transport 
 - ros-noetic-cv-bridge 
