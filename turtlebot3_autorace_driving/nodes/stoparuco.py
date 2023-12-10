@@ -9,9 +9,9 @@ from sensor_msgs.msg import Image, CompressedImage
 import cv2
 from cv2 import aruco
 
-class ArUcoStopper:
+class Stoparuco:
     def __init__(self):
-        rospy.init_node('ar_uco_stopper', anonymous=True)
+        rospy.init_node('stoparuco', anonymous=True)
         self.bridge = CvBridge()
         self.image_sub = rospy.Subscriber('/camera/image/compressed', CompressedImage, self.image_callback)
         self.aruco_pub = rospy.Publisher('/aruco_markers', Image, queue_size=10)
@@ -58,7 +58,7 @@ class ArUcoStopper:
 
 if __name__ == '__main__':
     try:
-        ar_uco_stopper = ArUcoStopper()
+        stoparuco = Stoparuco()
         rospy.spin()
 
     except rospy.ROSInterruptException:
