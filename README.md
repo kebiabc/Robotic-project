@@ -49,6 +49,8 @@ Open the camera on turtlebot3
 ```bash
 roslaunch turtlebot3_autorace_camera raspberry_pi_camera_publish.launch
 ```
+![image](https://github.com/kebiabc/Robotic-project/assets/33951067/41972b96-896d-4a96-9204-43b201913350)
+
 Launch the turtlebot3
 ```bash
 roslaunch turtlebot3_bringup turtlebot3_robot.launch 
@@ -73,6 +75,7 @@ roslaunch turtlebot3_autorace_detect detect_lane.launch mode:=calibration
 ```bash
 rosrun rqt_reconfigure rqt_reconfigure
 ```
+![image](https://github.com/kebiabc/Robotic-project/assets/33951067/dc08bc5b-656d-4604-8b7a-4e714fbc6dd8)
 
 
 
@@ -99,8 +102,10 @@ ssh niryo@192.168.0.150
 
 ### Operating interface
 Niryo Studio is a graphical HMI. It allows a fast and direct control of Ned with an external computer.
-
 Its purpose is to provide users with a complete and simple interface for Ned motion, programming environments and current status of Ned.
+We set tasks and parameters through the graphical interface, and finally export it to a python file
+![image](https://github.com/kebiabc/Robotic-project/assets/33951067/8dea1538-c6e4-4c11-b7a0-437cc49d4192)
+
 
 ### Autonomous Robotic Coordination
 Before 
