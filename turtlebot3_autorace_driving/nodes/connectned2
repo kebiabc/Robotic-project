@@ -5,7 +5,7 @@ import rospy
 from std_msgs.msg import UInt8
 
 
-class Connectled2:
+class Connectned2:
    def __init__(self):
       rospy.init_node('niryo_connection', anonymous=True)
 
@@ -42,7 +42,7 @@ class Connectled2:
 
 if __name__ == '__main__':
    try:
-      niryo_connection'= Connectled2()
+      niryo_connection'= Connectned2()
       rospy.spin()
 
    except rospy.ROSInterruptException:
