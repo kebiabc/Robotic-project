@@ -179,7 +179,13 @@ rosrun turtlebot3_autorace_driving connectned2.py
                                       | /aruco_markers   |
                                       +------------------+
 ```
+```bash
+      rospy.init_node('niryo_connection', anonymous=True)
 
+      self.sub_niryo = rospy.Subscriber('/niryo_con', UInt8, self.niryoCallBack, queue_size = 1)
+      self.pub_niryo = rospy.Publisher('/niryo_con', UInt8, queue_size=10)
+```
+      
 The ControlLane class subscribes to /aruco_distance topic, which is  published by the Stoparuco class.
 
 The Connectned2 class subscribes to and publishes messages on the /niryo_con topic, which used by the ControlLane class to coordinate the robot's behavior based on the Niryo controller status.
