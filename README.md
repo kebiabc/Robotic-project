@@ -64,22 +64,31 @@ roslaunch turtlebot3_autorace_camera intrinsic_camera_calibration.launch mode:=c
 ```
 ![image](https://github.com/kebiabc/Robotic-project/assets/33951067/1a9b8f6a-6f4c-41b1-aa4b-206dbd55ce45)
 
+The adjusted parameters should be placed in turtlebot3_autorace_camera/calibration/intrinsic_calibration/camerav2_320x240_30fps.yaml.
+
 ### Extrinsic Camera Calibration
 ```bash
 roslaunch turtlebot3_autorace_camera extrinsic_camera_calibration.launch mode:=calibration
 ```
 ![image](https://github.com/kebiabc/Robotic-project/assets/33951067/1493df54-6545-4f46-a2ee-a32ee1f39642)
 
+The adjusted parameters should be placed in turtlebot3_autorace_camera/calibration/extrinsic_calibration/projection.yaml.
+
 ### Lane Detection
 ```bash
 roslaunch turtlebot3_autorace_detect detect_lane.launch mode:=calibration
 ```
+
+Click Detect Lane then adjust parameters to do line color filtering.
 ```bash
 rosrun rqt_reconfigure rqt_reconfigure
 ```
 ![image](https://github.com/kebiabc/Robotic-project/assets/33951067/724c13f7-1fc9-4613-9b66-312a38a4881c)
 
+The adjusted parameters should be placed in turtlebot3_autorace_detect/param/lane/lane.yaml.
+
 ### Filtered Image resulted from adjusting parameters at rqt_reconfigure
+
 ![image](https://github.com/kebiabc/Robotic-project/assets/33951067/dc08bc5b-656d-4604-8b7a-4e714fbc6dd8)
 
 
