@@ -108,6 +108,20 @@ Using the camera on the TB3 we created an aruco tag detector which will detect t
 ```bash
 rosrun turtlebot3_autorace_driving stoparuco.py
 ```
+First, preprocess the images obtained by the camera.
+Then use the aruco.detectMarkers from opencv library to Identify Aruco tag and get the id.
+```bash
+cv_image = self.bridge.compressed_imgmsg_to_cv2(msg, 'bgr8')
+gray = cv2.cvtColor(cv_image, cv2.COLOR_BGR2GRAY)
+
+aruco_dict = aruco.Dictionary_get(aruco.DICT_4X4_50)
+parameters = aruco.DetectorParameters_create()       
+corners, ids, _ = aruco.detectMarkers(gray, aruco_dict, parameters=parameters)
+```
+#### In order to obtain the specific distance, we must first estimate the pose of the camera
+cameraMatrix and distCoeffs are the camera calibration parameters that were created during the camera calibration process.We have already obtained it in the previous steps.
+
+The output parameters rvecs and tvecs are the rotation and translation vectors respectively, for each of the markers in markerCorners.
 ```bash
 rvecs, tvecs, _ = cv2.aruco.estimatePoseSingleMarkers(corners[i], 0.1, self.camera_matrix, self.dist_coeffs)
 aruco.drawDetectedMarkers(cv_image, corners, ids)
@@ -132,7 +146,7 @@ We set tasks and parameters through the graphical interface, and finally export 
 
 
 ### Autonomous Robotic Coordination
-Before 
+Before launching
 ```bash
 roslaunch turtlebot3_autorace_driving turtlebot3_autorace_control_lane.launch
 ```
