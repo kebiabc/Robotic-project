@@ -41,13 +41,17 @@ As required by ROBOTIS AutoRace Challenge,in this part we try to perform the aut
 ssh ubuntu@192.168.0.200
 ```
 
-### TurtleBot3 Configuration
+### TurtleBot3 Configuration #TB3
 ```bash
 roslaunch turtlebot3_bringup turtlebot3_robot.launch #TB3
 ```
 Open the camera on turtlebot3
 ```bash
 roslaunch turtlebot3_autorace_camera raspberry_pi_camera_publish.launch
+```
+Launch the turtlebot3
+```bash
+roslaunch turtlebot3_bringup turtlebot3_robot.launch 
 ```     
 
 ### Intrinsic Camera Calibration
@@ -83,5 +87,27 @@ Using the camera on the TB3 we created an aruco tag detector which will detect t
 
 ### Connect to Niryo Ned 2 
 We connect to Niryo Ned 2 through SSH on the specific IP. By reading the documentation, there are many ways to establish a connection, because we also need to connect turtlebot, so in this case, we choose ethernet to connect.
+Open a new terminal 
 
+```bash
+ssh niryo@192.168.0.150
+```
 
+### Operating interface
+Niryo Studio is a graphical HMI. It allows a fast and direct control of Ned with an external computer.
+
+Its purpose is to provide users with a complete and simple interface for Ned motion, programming environments and current status of Ned.
+
+### Autonomous Robotic Coordination
+Before 
+```bash
+roslaunch turtlebot3_autorace_driving turtlebot3_autorace_control_lane.launch
+```
+Launch the added code
+```bash
+
+rosrun turtlebot3_autorace_driving stoparuco.py
+
+rosrun turtlebot3_autorace_driving connectned2.py
+
+```
