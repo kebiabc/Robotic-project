@@ -10,6 +10,7 @@ Supervisors:
  - Raphael Duverne
 
 ## Project Goal
+The project is based on TurtleBot3 https://emanual.robotis.com/docs/en/platform/turtlebot3/autonomous_driving/#autonomous-driving
 Create the coordination with TurtleBot3 and Niryo Ned2
 
 Main Project Divided in Two Parts:
