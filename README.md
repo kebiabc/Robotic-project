@@ -49,7 +49,7 @@ Open the camera on turtlebot3
 ```bash
 roslaunch turtlebot3_autorace_camera raspberry_pi_camera_publish.launch
 ```
-![image](https://github.com/kebiabc/Robotic-project/assets/33951067/41972b96-896d-4a96-9204-43b201913350)
+![image](https://github.com/kebiabc/Robotic-project/assets/33951067/cee3acd5-9fa1-417a-bef7-ec3c40d4b36d)
 
 Launch the turtlebot3
 ```bash
